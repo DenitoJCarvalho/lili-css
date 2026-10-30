@@ -1,0 +1,45 @@
+{
+  "name": "lili-css",
+  "version": "0.1.0",
+  "description": "framework CSS leve, sem dependências, baseado em variáveis CSS.",
+  "keywords": [
+    "css",
+    "css-framework",
+    "framework",
+    "design-system",
+    "utilities",
+    "custom-properties",
+    "lili"
+  ],
+  "homepage": "https://github.com/DenitoJCarvalho/lili-css#readme",
+  "bugs": {
+    "url": "https://github.com/DenitoJCarvalho/lili-css/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenitoJCarvalho/lili-css.git"
+  },
+  "license": "MIT",
+  "author": "Dennis J de Carvalho",
+  "style": "dist/lili.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": "./dist/lili.css",
+    "./min": "./dist/lili.min.css",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "lightningcss --bundle src/index.css -o dist/lili.css && lightningcss --bundle --minify src/index.css -o dist/lili.min.css",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "lightningcss-cli": "^1.33.0"
+  },
+  "allowScripts": {
+    "lightningcss-cli@1.33.0": true
+  }
+}
